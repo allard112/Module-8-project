@@ -45,63 +45,84 @@ int nfcState = 0;
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
+  for(int i=3; i<=19; i++) {
+    pinMode(i, OUTPUT);
+  }
 }
 
 void loop() {
+  for(int i=3; i<=19; i++) {
+    digitalWrite(i, LOW);
+  }
+
   // put your main code here, to run repeatedly:
   switch(modeState) {
     case earthquake_japan:
-
+      digitalWrite(3, HIGH);
       break;
     case earthquake_haiti:
+      digitalWrite(4, HIGH);
     
       break;
     case earthquake_nepal:
+      digitalWrite(5, HIGH);
 
       break;
     case earthquake_turkey:
+      digitalWrite(6, HIGH);
 
       break;
     case earthquake_the_netherlands:
+      digitalWrite(7, HIGH);
 
       break;
     case earthquake_use:
+      digitalWrite(8, HIGH);
 
       break;
     case earthquake_china:
+      digitalWrite(9, HIGH);
 
       break;
     case earthquake_italy:
+      digitalWrite(10, HIGH);
 
       break;
     case earthquake_chile:
+      digitalWrite(11, HIGH);
 
       break;
     case earthquake_egypt:
+      digitalWrite(12, HIGH);
 
       break;
     case earthquake_greece:
+      digitalWrite(13, HIGH);
 
       break;
     case earthquake_guatemala:
+      digitalWrite(14, HIGH);
 
       break;
     case earthquake_myanmar:
+      digitalWrite(15, HIGH);
 
       break;
     case earthquake_russia:
+      digitalWrite(16, HIGH);
 
       break;
     case earthquake_indonesia:
+      digitalWrite(17, HIGH);
 
       break;
     case earthquake_new_zealand:
+      digitalWrite(18, HIGH);
 
       break;
     case earthquake_mexico:
+      digitalWrite(19, HIGH);
 
       break;
   }
-
-
 }
