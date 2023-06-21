@@ -64,18 +64,25 @@ int nfcState = 0;
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
-  
+
   SPI.begin();
-  
-  pinMode(chipSelectPin,OUTPUT);              // Set digital pin 10 as OUTPUT to connect it to the RFID /ENABLE pin 
+
+  pinMode(chipSelectPin,OUTPUT);              // Set digital pin 10 as OUTPUT to connect it to the RFID /ENABLE pin
     digitalWrite(chipSelectPin, LOW);         // Activate the RFID reader
   pinMode(NRSTPD,OUTPUT);                     // Set digital pin 10 , Not Reset and Power-down
     digitalWrite(NRSTPD, HIGH);
 
-  myRFID.AddicoreRFID_Init();  
+  myRFID.AddicoreRFID_Init();
+  for(int i=3; i<=19; i++) {
+    pinMode(i, OUTPUT);
+  }
 }
 
 void loop() {
+  for(int i=3; i<=19; i++) {
+    digitalWrite(i, LOW);
+  }
+
   // put your main code here, to run repeatedly:
     	uchar i, tmp, checksum1;
 	uchar status;
@@ -133,7 +140,7 @@ void loop() {
     	      Serial.println(str[4]);
           Serial.print("Calculated Checksum:\t");
             Serial.println(checksum1);
-			
+
             // Should really check all pairs, but for now we'll just use the first
             if(str[0] == 197)                      //You can change this to the first byte of your tag by finding the card's ID through the Serial Monitor
             {
@@ -153,71 +160,86 @@ void loop() {
 					modeState = 0;
 					break;
 			}
-			
+
             delay(1000);
 	} else {
     modeState = 0;
 	}
-		
-        myRFID.AddicoreRFID_Halt();		   //Command tag into hibernation          
-  
-  
+
+        myRFID.AddicoreRFID_Halt();		   //Command tag into hibernation
+
+
   switch(modeState) {
     case earthquake_japan:
+      digitalWrite(3, HIGH);
+      break;
+    case earthquake_haiti:
+      digitalWrite(4, HIGH);
 
 		break;
-    case earthquake_haiti:
-    
-		break;
     case earthquake_nepal:
+      digitalWrite(5, HIGH);
 
 		break;
     case earthquake_turkey:
+      digitalWrite(6, HIGH);
 
 		break;
     case earthquake_the_netherlands:
-		Serial.println("\nRIP GRONINGEN 2010/n");
-		break;
-    case earthquake_usa:
+      digitalWrite(7, HIGH);
 
-		break;
+      break;
+    case earthquake_use:
+      digitalWrite(8, HIGH);
+
+      break;
     case earthquake_china:
+      digitalWrite(9, HIGH);
 
 		break;
     case earthquake_italy:
+      digitalWrite(10, HIGH);
 
 		break;
     case earthquake_chile:
+      digitalWrite(11, HIGH);
 
 		break;
     case earthquake_egypt:
+      digitalWrite(12, HIGH);
 
 		break;
     case earthquake_greece:
+      digitalWrite(13, HIGH);
 
 		break;
     case earthquake_guatemala:
+      digitalWrite(14, HIGH);
 
 		break;
     case earthquake_myanmar:
+      digitalWrite(15, HIGH);
 
 		break;
     case earthquake_russia:
+      digitalWrite(16, HIGH);
 
 		break;
     case earthquake_indonesia:
+      digitalWrite(17, HIGH);
 
 		break;
     case earthquake_new_zealand:
+      digitalWrite(18, HIGH);
 
 		break;
     case earthquake_mexico:
-		Serial.println("\nRIP MEXICO 30000/n");
-		break;
-	default:
-		
-		break;
-  }
+      digitalWrite(19, HIGH);
 
-//test
+      break;
+
+    default:
+    
+      break;
+  }
 }
