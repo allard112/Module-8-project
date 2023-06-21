@@ -13,23 +13,23 @@ uchar fifoValue;
 
 AddicoreRFID myRFID; // create AddicoreRFID object to control the RFID module
 
-#define nfc_japan 1
-#define nfc_haiti 2
-#define nfc_nepal 3
-#define nfc_turkey 4
-#define nfc_the_netherlands 124
-#define nfc_usa 6
-#define nfc_china 7
-#define nfc_italy 8
-#define nfc_chile 9
-#define nfc_egypt 10
-#define nfc_greece 11
-#define nfc_guatemala 12
-#define nfc_myanmar 13
-#define nfc_russia 14
-#define nfc_indonesia 15
-#define nfc_new_zealand 16
-#define nfc_mexico 210
+#define nfc_japan 102
+#define nfc_haiti 209
+#define nfc_nepal 25
+#define nfc_turkey 116
+#define nfc_the_netherlands 76
+#define nfc_usa 42
+#define nfc_china 131
+#define nfc_italy 59
+#define nfc_chile 102
+#define nfc_egypt 252
+#define nfc_greece 90
+#define nfc_guatemala 186
+#define nfc_myanmar 112
+#define nfc_russia 159
+#define nfc_indonesia 26
+#define nfc_new_zealand 183
+#define nfc_mexico 215
 
 
 //pins
