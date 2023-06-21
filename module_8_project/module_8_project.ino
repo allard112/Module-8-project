@@ -86,7 +86,7 @@ void loop() {
 
         str[1] = 0x4400;
 	//Find tags, return tag type
-	status = myRFID.AddicoreRFID_Request(PICC_REQIDL, str);	
+	status = myRFID.AddicoreRFID_Request(PICC_REQIDL, str);
 	if (status == MI_OK)
 	{
           Serial.println("RFID tag detected");
@@ -144,17 +144,19 @@ void loop() {
             Serial.println();
 			switch(checksum1){
 				case nfc_the_netherlands:
-					modeState = earthquake_thenetherlands
+					modeState = earthquake_the_netherlands;
 					break;
 				case nfc_mexico:
-					modestate = earthquake_mexico
+					modeState = earthquake_mexico;
 					break;
 				default:
-					modestate = 0
+					modeState = 0;
 					break;
 			}
 			
             delay(1000);
+	} else {
+    modeState = 0;
 	}
 		
         myRFID.AddicoreRFID_Halt();		   //Command tag into hibernation          
@@ -176,7 +178,7 @@ void loop() {
     case earthquake_the_netherlands:
 		Serial.println("\nRIP GRONINGEN 2010/n");
 		break;
-    case earthquake_use:
+    case earthquake_usa:
 
 		break;
     case earthquake_china:
@@ -217,5 +219,5 @@ void loop() {
 		break;
   }
 
-
+//test
 }
