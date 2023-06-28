@@ -228,86 +228,104 @@ void loop() {
   switch (modeState) {
     case earthquake_japan:
       Serial.print("works jap");
+      Serial.write(modeState);
       break;
 
     case earthquake_haiti:
       Serial.print("works haiti");
+      Serial.write(modeState);
       break;
 
     case earthquake_nepal:
       Serial.print("works nepal");
+      Serial.write(modeState);
       break;
 
     case earthquake_turkey:
       digitalWrite(6, HIGH);
       Serial.print("works turk");
+      Serial.write(modeState);
       break;
 
     case earthquake_the_netherlands:
       digitalWrite(7, HIGH);
       Serial.print("works nl");
+      Serial.write(modeState);
       break;
 
     case earthquake_usa:
       Serial.print("works usa");
+      Serial.write(modeState);
       break;
 
     case earthquake_china:
       Serial.print("works china");
+      Serial.write(modeState);
       digitalWrite(9, HIGH);
       break;
 
     case earthquake_italy:
       Serial.print("works italy");
+      Serial.write(modeState);
       digitalWrite(10, HIGH);
       break;
 
     case earthquake_chile:
       Serial.print("works chile");
+      Serial.write(modeState);
       digitalWrite(11, HIGH);
       break;
 
     case earthquake_egypt:
       Serial.print("works egypt");
+      Serial.write(modeState);
       digitalWrite(12, HIGH);
       break;
 
     case earthquake_greece:
       Serial.print("works greece");
+      Serial.write(modeState);
       digitalWrite(13, HIGH);
       break;
 
     case earthquake_guatemala:
       Serial.print("works guatemala");
+      Serial.write(modeState);
       digitalWrite(14, HIGH);
       break;
 
     case earthquake_myanmar:
       Serial.print("works myanmar");
+      Serial.write(modeState);
       digitalWrite(15, HIGH);
       break;
 
     case earthquake_russia:
       Serial.print("works russia");
+      Serial.write(modeState);
       digitalWrite(16, HIGH);
       break;
 
     case earthquake_indonesia:
       Serial.print("works indonesia");
+      Serial.write(modeState);
       digitalWrite(17, HIGH);
       break;
 
     case earthquake_new_zealand:
       Serial.print("works new zealand");
+      Serial.write(modeState);
       digitalWrite(18, HIGH);
       break;
 
     case earthquake_mexico:
       Serial.print("works mexico");
+      Serial.write(modeState);
       digitalWrite(19, HIGH);
       break;
 
     case nothing_detected:
+      Serial.write(modeState);
       Serial.println("it goes here");
       // digitalWrite(3, LOW);
       // digitalWrite(4, LOW);
